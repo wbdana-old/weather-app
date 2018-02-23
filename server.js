@@ -9,6 +9,8 @@ app.use(express.static('public')); // expose static files in public/
 app.use(bodyParser.urlencoded({ extended: true })); // enable body-parser to pass client input server-side
 
 app.get('/', function (req, res) {
+    /* Need to pass in object as second parameter to render to avoid
+    undefined errors */
     res.render('index', {weather: null, error: null});
 })
 
